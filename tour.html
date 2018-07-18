@@ -1,64 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>WM 2018 in St. Petersburg</title>
-    <link rel = "stylesheet" href = "css/Design.css" type = "text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>St. Petersburg</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
-<section id="menubar">
-    <ul>
-        <li> <a class="menubutton" href="#menu"> <img src="menu.png" /> </a> </li>
-    </ul>
-</section>
 <header>
-    <h1>WM2018 in St. Petersburg</h1>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="index.html">St. Petersburg</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="geschichte.html">Geschichte St. Petersburg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guide.html">Sehenswürdigkeiten</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="wm.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">WM in St. Petersburg</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="ergebnisse.html">Spielergebnisse</a>
+                        <a class="dropdown-item" href="stadion.html">Fußballstadion</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
+<main role="main">
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DTourr!</h2>
+                <img src="images/bild1.jpg"/>;
+                <p>Der Anfang von St. Petersburg beginnt 1607</p>
+            </div> <!-- /col -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
 
+</main>
 
-<nav class="nav">
-    <ul>
-        <li><a href = "index.html">Startseite</a></li>
-        <li> <a href = "ergebnisse.html">Spielergebnisse</a></li>
-        <li><a href = "geschichte.html" class="active">Geschichte St. Peterburgs</a></li>
-        <li><a href = "guide.html">Sehenswürdigkeiten</a></li>
-        <li><a href = "stadion.html">Fußballstadion</a></li>
-
-    </ul>
-</nav>
-
-<section id="main">
-    <article>
-        <h2>DTourr!</h2>
-        <img src="images/bild1.jpg"/>;
-        <p>Der Anfang von St. Petersburg beginnt 1607</p>
-    </article>
-</section>
-
-<footer>
-    <ul>
-        <li>Datenschutz</li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li>Kontakt</li>
-    </ul>
+<footer class="footer">
+    <div class="container">
+        <p><a href="impressum.html">Impressum</a></p>
+    </div> <!-- /container -->
 </footer>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js""></script>
-<script type="text/javascript">
-    $(document).ready(function()  {
-        $('.menubutton').click(function() {
-            $('nav').slideToggle('slow');
-        });
-    });
-</script>
-
-
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="js/vendor/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
