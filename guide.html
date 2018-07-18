@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WM 2018 in St. Petersburg</title>
+
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel = "stylesheet" href = "css/Design1.css" type = "text/css" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+
+<section id="menubar">
+    <ul>
+        <li> <a class="menubutton" href="#menu"> <img src="menu.png" /> </a> </li>
+    </ul>
+</section>
+<header>
+    <h1>WM2018 in St. Petersburg</h1>
+</header>
+
+
+
+
+<nav class="nav">
+    <ul>
+        <li><a href = "index.html">Startseite</a></li>
+        <li> <a href = "ergebnisse.html">Spielergebnisse</a></li>
+        <li><a href = "geschichte.html">Geschichte St. Peterburgs</a></li>
+        <li><a href = "guide.html" class="active">Sehenswürdigkeiten</a></li>
+        <li><a href = "stadion.html">Fußballstadion</a></li>
+
+    </ul>
+</nav>
+
+<section id="main">
+    <article>
+        <h2>Melde dich jetzt zu deiner Guide Tour an!</h2>
+        <img src="images/bild1.jpg"/>;
+
+        <div class="row">
+
+            <div class="col-nd-6">
+                <form class="form-inline" id="fraKontakt">
+
+                    <select class="form-control" >
+                        <option>Herr</option>
+                        <option>Frau</option>
+
+                    </select>
+                    <div class="col-xs-4" id="frmGrpVorname">
+                        <label for="vorname" class="control-label"></label>
+                        <input type="text" class="form-control" id="vorname" placeholder="Vorname"pattern="{20}">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpNachname">
+                        <label for="nachname" class="control-label"></label>
+                        <input type="text" class="form-control" id="nachname" placeholder="Nachname"pattern="{20}">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpStrasse">
+                        <label for="strasse" class="control-label"></label>
+                        <input type="text" class="form-control" id="strasse" placeholder="Straße"pattern="{20}">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpPlz">
+                        <label for="plz" class="control-label"></label>
+                        <input type="text" class="form-control" id="plz" placeholder="Postleitzahl"pattern="[0-9]{5}">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpOrt">
+                        <label for="ort" class="control-label"></label>
+                        <input type="text" class="form-control" id="ort" placeholder="Stadt"pattern="{20}">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpEmail">
+                        <label for="email" class="control-label"></label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="col-xs-4" id="frmGrpDatum">
+                        <label for="datum" class="control-label"></label>
+                        <input type="text" class="form-control" id="datum" placeholder="Teilnahmedatum"pattern="{10}">
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary" >Anmelden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </article>
+
+</section>
+
+<footer>
+    <ul>
+        <li>Datenschutz</li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li>Kontakt</li>
+    </ul>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js""></script>
+<script type="text/javascript">
+    $(document).ready(function()  {
+        $('.menubutton').click(function() {
+            $('nav').slideToggle('slow');
+        });
+    });
+</script>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $('#fraKontakt').submit(function () {
+        var formControl = true;
+        var frmGrpVorname = $('#frmGrpVorname');
+        var frmGrpNachname = $('#frmGrpNachname');
+        var frmGrpStrasse = $('#frmGrpStrasse');
+        var frmGrpOrt = $('#frmGrpOrt');
+        var frmGrpPlz = $('#frmGrpPlz');
+        var frmGrpEmail = $('#frmGrpEmail');
+        var frmGrpDatum = $('#frmGrpDatum');
+
+        frmGrpVorname.removeClass('has-error');
+        frmGrpNachname.removeClass('has-error');
+        frmGrpStrasse.removeClass('has-error');
+        frmGrpOrt.removeClass('has-error');
+        frmGrpPlz.removeClass('has-error');
+        frmGrpEmail.removeClass('has-error');
+        frmGrpDatum.removeClass('has-error');
+
+
+        var vorname = $('#vorname').val();
+        var nachname = $('#nachname').val();
+        var strasse = $('#strasse').val();
+        var ort = $('#ort').val();
+        var plz = $('#plz').val();
+        var email = $('#email').val();
+        var datum = $('#datum').val();
+
+
+        if(vorname == '' || !isNaN(vorname)){
+            formControl = false;
+            frmGrpVorname.addClass('has-error');
+        }
+
+        if(nachname == ''|| !isNaN(nachname)){
+            formControl = false;
+            frmGrpNachname.addClass('has-error');
+        }
+
+        if(strasse == ''){
+            formControl = false;
+            frmGrpStrasse.addClass('has-error');
+        }
+
+        if(ort == ''){
+            formControl = false;
+            frmGrpOrt.addClass('has-error');
+        }
+
+        if(plz == ''){
+            formControl = false;
+            frmGrpPlz.addClass('has-error');
+        }
+        buffer = email.indexOf("@");
+
+        if(email == ''){
+            formControl = false;
+            frmGrpEmail.addClass('has-error');
+        }
+
+        if(datum == ''){
+            formControl = false;
+            frmGrpDatum.addClass('has-error');
+        }
+
+
+        return false;
+    })
+</script>
+
+
+
+
+</body>
+
+</html>
