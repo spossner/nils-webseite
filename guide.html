@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,7 +38,6 @@
 </header>
 
 <main role="main">
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -57,127 +56,101 @@
             </div>
         </div>
 
-        <form>
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-            </div>
+        <form id="frmGuidedTour" novalidate>
             <fieldset class="form-group">
-                <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="form-row">
+                    <legend class="col-form-label col-sm-2 pt-0">Anrede</legend>
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                                First radio
+                            <input class="form-check-input" type="radio" name="gridRadios" id="male" value="male" checked>
+                            <label class="form-check-label" for="male">
+                                Herr
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Second radio
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                            <label class="form-check-label" for="gridRadios3">
-                                Third disabled radio
+                            <input class="form-check-input" type="radio" name="gridRadios" id="female" value="female">
+                            <label class="form-check-label" for="female">
+                                Frau
                             </label>
                         </div>
                     </div>
                 </div>
             </fieldset>
-            <div class="form-group row">
-                <div class="col-sm-2">Checkbox</div>
+
+            <div class="form-group form-row">
+                <label for="vorname" class="col-sm-2 col-form-label">Vorname</label>
                 <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            Example checkbox
-                        </label>
+                    <input type="text" class="form-control" id="vorname" placeholder="Vorname" pattern="[a-zA-ZäöüÄÖÜß- ]+" required>
+                    <div class="invalid-feedback">
+                        Bitte einen Vornamen angeben (nur Buchstaben)
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
+
+            <div class="form-group form-row">
+                <label for="nachname" class="col-sm-2 col-form-label">Nachname</label>
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <input type="text" class="form-control" id="nachname" placeholder="Nachname" pattern="[a-zA-ZäöüÄÖÜß- ]+" required>
+                    <div class="invalid-feedback">
+                        Bitte einen Nachnamen angeben (nur Buchstaben)
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group form-row">
+                <label for="strasse" class="col-sm-2 col-form-label">Straße</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="strasse" placeholder="Straße" required>
+                    <div class="invalid-feedback">
+                        Bitte Ihre Straße angeben
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="plz" class="col-sm-2 col-form-label">PLZ / Ort</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="plz" placeholder="PLZ" maxlength="5" pattern="[0-9]{5}" required>
+                    <div class="invalid-feedback">
+                        Bitte Ihre fünfstellige PLZ eingeben
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="ort" placeholder="Ort" required>
+                    <div class="invalid-feedback">
+                        Bitte Ihren Wohnort eingeben
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="email" class="col-sm-2 col-form-label">E-Mail</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="E-Mail" required>
+                    <div class="invalid-feedback">
+                        Bitte eine gültige Email-Adresse angeben
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="datum" class="col-sm-2 col-form-label">Datum</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="datum" placeholder="TT.MM.JJJJ" maxlength="10" pattern="\d{2}\.\d{2}\.\d{4}" required>
+                    <div class="invalid-feedback">
+                        Bitte als TT.MM.JJJJ angeben
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Anmelden</button>
                 </div>
             </div>
         </form>
-
-
-                    <!--form class="form-inline" id="fraKontakt">
-
-                        <select class="form-control" >
-                            <option>Herr</option>
-                            <option>Frau</option>
-
-                        </select>
-                        <div class="col-xs-4" id="frmGrpVorname">
-                            <label for="vorname" class="control-label"></label>
-                            <input type="text" class="form-control" id="vorname" placeholder="Vorname"pattern="{20}">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpNachname">
-                            <label for="nachname" class="control-label"></label>
-                            <input type="text" class="form-control" id="nachname" placeholder="Nachname"pattern="{20}">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpStrasse">
-                            <label for="strasse" class="control-label"></label>
-                            <input type="text" class="form-control" id="strasse" placeholder="Straße"pattern="{20}">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpPlz">
-                            <label for="plz" class="control-label"></label>
-                            <input type="text" class="form-control" id="plz" placeholder="Postleitzahl"pattern="[0-9]{5}">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpOrt">
-                            <label for="ort" class="control-label"></label>
-                            <input type="text" class="form-control" id="ort" placeholder="Stadt"pattern="{20}">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpEmail">
-                            <label for="email" class="control-label"></label>
-                            <input type="email" class="form-control" id="email" placeholder="E-mail">
-                        </div>
-                        <div class="col-xs-4" id="frmGrpDatum">
-                            <label for="datum" class="control-label"></label>
-                            <input type="text" class="form-control" id="datum" placeholder="Teilnahmedatum"pattern="{10}">
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary" >Anmelden</button>
-                        </div>
-                    </form-->
     </div> <!-- /container -->
-
-    <!--div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
-
-        <hr>
-
-    </div> <!-- /container -->
-
 </main>
 
 <footer class="footer">
@@ -194,74 +167,16 @@
 <script src="js/vendor/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    $('#fraKontakt').submit(function () {
-        var formControl = true;
-        var frmGrpVorname = $('#frmGrpVorname');
-        var frmGrpNachname = $('#frmGrpNachname');
-        var frmGrpStrasse = $('#frmGrpStrasse');
-        var frmGrpOrt = $('#frmGrpOrt');
-        var frmGrpPlz = $('#frmGrpPlz');
-        var frmGrpEmail = $('#frmGrpEmail');
-        var frmGrpDatum = $('#frmGrpDatum');
-
-        frmGrpVorname.removeClass('has-error');
-        frmGrpNachname.removeClass('has-error');
-        frmGrpStrasse.removeClass('has-error');
-        frmGrpOrt.removeClass('has-error');
-        frmGrpPlz.removeClass('has-error');
-        frmGrpEmail.removeClass('has-error');
-        frmGrpDatum.removeClass('has-error');
-
-
-        var vorname = $('#vorname').val();
-        var nachname = $('#nachname').val();
-        var strasse = $('#strasse').val();
-        var ort = $('#ort').val();
-        var plz = $('#plz').val();
-        var email = $('#email').val();
-        var datum = $('#datum').val();
-
-
-        if(vorname == '' || !isNaN(vorname)){
-            formControl = false;
-            frmGrpVorname.addClass('has-error');
-        }
-
-        if(nachname == ''|| !isNaN(nachname)){
-            formControl = false;
-            frmGrpNachname.addClass('has-error');
-        }
-
-        if(strasse == ''){
-            formControl = false;
-            frmGrpStrasse.addClass('has-error');
-        }
-
-        if(ort == ''){
-            formControl = false;
-            frmGrpOrt.addClass('has-error');
-        }
-
-        if(plz == ''){
-            formControl = false;
-            frmGrpPlz.addClass('has-error');
-        }
-        buffer = email.indexOf("@");
-
-        if(email == ''){
-            formControl = false;
-            frmGrpEmail.addClass('has-error');
-        }
-
-        if(datum == ''){
-            formControl = false;
-            frmGrpDatum.addClass('has-error');
-        }
-
-
-        return false;
-    })
+<script>
+    $( document ).ready(function() {
+        $('#frmGuidedTour').submit(function( event ) {
+            if (this.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            this.classList.add('was-validated');
+        });
+    });
 </script>
 </body>
 </html>
