@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>St. Petersburg</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <a class="navbar-brand" href="index.html">St. Petersburg</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="geschichte.html">Geschichte St. Petersburg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guide.html">Sehenswürdigkeiten</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="wm.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">WM in St. Petersburg</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="ergebnisse.html">Spielergebnisse</a>
+                        <a class="dropdown-item" href="stadion.html">Fußballstadion</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main role="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="location-map">
+                    <img src="images/map.jpg" usemap="#location-map">
+
+                    <map name="location-map" id="location-map">
+                        <area shape="poly" coords="608,345,607,359,632,377,647,371,649,359,623,337,608,345" href="russian-museum.html" data-poi="russian" />
+                        <area shape="poly" coords="140,276,187,226,115,212,106,231,113,257,140,276" href="javascript:;" alt="" data-poi="theater"/>
+                        <area shape="poly" coords="746,239,702,337,727,349,785,286,800,244,746,239" href="javascript:;" alt="" data-poi="garden"/>
+                        <area shape="poly" coords="471,214,459,230,460,245,505,251,518,214,471,214" href="javascript:;" alt="" data-poi="museum"/>
+                        <area shape="poly" coords="294,259,301,262,328,265,343,264,350,251,352,222,339,205,329,183,326,183,322,162,315,180,311,189,304,203,293,225,294,259" href="javascript:;" alt="" data-poi="cathedral"/>
+                    </map>
+                </div>
+            </div> <!-- /col -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+
+    <div id="cathedral" class="poi">
+        <h2>St. Isaac Cathedral</h2>
+        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+    </div>
+    <div id="theater" class="poi">
+        <h2>Mariinsky Theater</h2>
+        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+    </div>
+    <div id="garden" class="poi">
+        <h2>Summer Garden</h2>
+        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+    </div>
+    <div id="museum" class="poi">
+        <h2>Hermitage Museum</h2>
+        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+    </div>
+    <div id="russian" class="poi">
+        <h2>Russian Museum</h2>
+        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p><a href="impressum.html">Impressum</a></p>
+    </div> <!-- /container -->
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="js/vendor/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        if($('#location-map')) {
+            $('#location-map area').each(function() {
+                var poi = $(this).data('poi');
+                $(this).mouseover(function(e) {
+                    var el = $('#'+poi);
+                    el.css('left', e.clientX+10);
+                    el.css('top', e.clientY+10);
+                    el.show();
+                });
+
+                $(this).mouseout(function() {
+                    $('#'+poi).hide();
+                });
+
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
