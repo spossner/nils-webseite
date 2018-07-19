@@ -23,7 +23,7 @@
                     <a class="nav-link" href="geschichte.html">Geschichte St. Petersburg</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="guide.html">Sehenswürdigkeiten</a>
+                    <a class="nav-link active" href="guide.html">Sehenswürdigkeiten</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="wm.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">WM in St. Petersburg</a>
@@ -44,7 +44,26 @@
             <div class="col-md-12">
                 <div class="location-map">
                     <img src="images/map.jpg" usemap="#location-map">
-
+                    <div id="cathedral" class="poi">
+                        <h2>St. Isaac Cathedral</h2>
+                        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+                    </div>
+                    <div id="theater" class="poi">
+                        <h2>Mariinsky Theater</h2>
+                        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+                    </div>
+                    <div id="garden" class="poi">
+                        <h2>Summer Garden</h2>
+                        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+                    </div>
+                    <div id="museum" class="poi">
+                        <h2>Hermitage Museum</h2>
+                        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+                    </div>
+                    <div id="russian" class="poi">
+                        <h2>Russian Museum</h2>
+                        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
+                    </div>
                     <map name="location-map" id="location-map">
                         <area shape="poly" coords="608,345,607,359,632,377,647,371,649,359,623,337,608,345" href="russian-museum.html" data-poi="russian" />
                         <area shape="poly" coords="140,276,187,226,115,212,106,231,113,257,140,276" href="javascript:;" alt="" data-poi="theater"/>
@@ -56,27 +75,6 @@
             </div> <!-- /col -->
         </div> <!-- /row -->
     </div> <!-- /container -->
-
-    <div id="cathedral" class="poi">
-        <h2>St. Isaac Cathedral</h2>
-        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-    </div>
-    <div id="theater" class="poi">
-        <h2>Mariinsky Theater</h2>
-        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-    </div>
-    <div id="garden" class="poi">
-        <h2>Summer Garden</h2>
-        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-    </div>
-    <div id="museum" class="poi">
-        <h2>Hermitage Museum</h2>
-        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-    </div>
-    <div id="russian" class="poi">
-        <h2>Russian Museum</h2>
-        <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-    </div>
 
 </main>
 
@@ -96,22 +94,19 @@
 
 <script>
     $(document).ready(function() {
-        if($('#location-map')) {
-            $('#location-map area').each(function() {
-                var poi = $(this).data('poi');
-                $(this).mouseover(function(e) {
-                    var el = $('#'+poi);
-                    el.css('left', e.clientX+10);
-                    el.css('top', e.clientY+10);
-                    el.show();
-                });
-
-                $(this).mouseout(function() {
-                    $('#'+poi).hide();
-                });
-
+        $('#location-map area').each(function() {
+            var poi = $(this).data('poi');
+            $(this).mouseover(function(e) {
+                var el = $('#'+poi);
+                el.css('left', e.clientX+10);
+                el.css('top', e.clientY+10);
+                el.show();
             });
-        }
+
+            $(this).mouseout(function() {
+                $('#'+poi).hide();
+            });
+        });
     });
 </script>
 

@@ -40,7 +40,7 @@ body {
 }
 
 .poi {
-    position:absolute;
+    position:fixed;
     background:#fff;
     opacity:0.8;
     width:300px;
